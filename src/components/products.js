@@ -18,11 +18,14 @@ return (
      <Row>
         {products.map((product)=>(
             <Col  key={product.id}>
-            <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={product.image} />
+            <Card className='cardwidth mb-5'>
+            <Card.Img variant="top"
+            className='ms-5'
+            style={{width:'200px' , height:'261.55px'}}
+            src={product.image}/>
             <Card.Body>
-            <Card.Title>{product.title}</Card.Title>
-            <Card.Text>
+            <Card.Title className='text title'>{product.title}</Card.Title>
+            <Card.Text className='text description'>
                 {product.description}
             </Card.Text>
             <Card.Text>
