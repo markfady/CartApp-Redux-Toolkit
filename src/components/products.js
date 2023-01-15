@@ -3,7 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchData } from '../rtk/slices/productsSlice';
+import { addToCart } from '../rtk/slices/cartSlice';
+import { fetchData} from '../rtk/slices/productsSlice';
 
 export default function Products() {
     const products=useSelector((state)=>state.products);
@@ -24,7 +25,10 @@ return (
             <Card.Text>
                 {product.description}
             </Card.Text>
-            <Button variant="primary">Add to Cart</Button>
+            <Card.Text>
+                {product.price}$
+            </Card.Text>
+            <Button variant="primary" onClick={()=>dispatch(addToCart(product))}>Add to Cart</Button> 
             </Card.Body>
         </Card>
         </Col>
@@ -32,6 +36,5 @@ return (
     }   
     </Row> 
 </Container>
-
 )
 }

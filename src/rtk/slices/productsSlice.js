@@ -9,11 +9,6 @@ import { createSlice , createAsyncThunk} from "@reduxjs/toolkit";
 export const productsSlice=createSlice({
     initialState:[],
     name:'productsSlice',
-    reducers:{
-        addProduct:(state,action)=>{
-            state.push(action.payload);
-        }
-    },
     extraReducers:(builder)=>{
         builder.addCase(fetchData.fulfilled,(state,action)=>{
             return action.payload;
@@ -21,4 +16,3 @@ export const productsSlice=createSlice({
     }
 })
 export default productsSlice.reducer;
-export const {addProduct}=productsSlice.actions;
