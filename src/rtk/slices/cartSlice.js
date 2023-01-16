@@ -1,4 +1,3 @@
-import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
 
    export const cartSlice=createSlice({
@@ -7,10 +6,13 @@ import { createSlice } from '@reduxjs/toolkit'
         reducers:{
             addToCart:(state,action)=>{
                 state.push(action.payload)
+            },
+            deleteFromCart:(state,action)=>{
+                state.pop(action.payload)
             }
         }
     })
 
 export default cartSlice.reducer;
-export const{addToCart}=cartSlice.actions;
+export const{addToCart,deleteFromCart}=cartSlice.actions;
 

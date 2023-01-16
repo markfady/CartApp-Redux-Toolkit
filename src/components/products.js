@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -14,10 +14,10 @@ export default function Products() {
         dispatch(fetchData());
     },[]);
 return (
-    <Container>
+    <Container className='pt-5'>
      <Row>
         {products.map((product)=>(
-            <Col  key={product.id}>
+            <Col >
             <Card className='cardwidth mb-5'>
             <Card.Img variant="top"
             className='ms-5'
